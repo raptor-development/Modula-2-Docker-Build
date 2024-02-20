@@ -6,6 +6,12 @@ RUN apt-get update && \
     apt clean && \
     rm -rf /var/apt/lib/lists/*
 
+WORKDIR /var/myapp
+
 COPY watch-compile.sh .
 
-CMD ["watch-compile.sh"]
+RUN chmod u+x watch-compile.sh
+
+RUN ls -al
+
+CMD ["/var/myapp/watch-compile.sh"]

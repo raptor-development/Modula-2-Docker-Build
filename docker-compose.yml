@@ -7,5 +7,6 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ./compile:~/compile
-      - ./compiled:~/compiled
+      - ./compile:/var/myapp/compile
+      - ./compiled:/var/myapp/compiled
+      - ./watch-compile.sh:/var/myapp/watch-compile.sh
